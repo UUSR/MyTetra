@@ -417,6 +417,12 @@ Program id
 #define	VERSION "1.75"			/* mimeTeX version number */
 #define REVISIONDATE "10 June 2017"	/* date of most recent revision */
 #define COPYRIGHTTEXT "Copyright(c) 2002-2017, John Forkosh Associates, Inc"
+/* -------------------------------------------------------------------------
+NSVC compiler
+-------------------------------------------------------------------------- */
+#define strncasecmp _strnicmp   /* фикс для MSVC компилятора */
+#define popen _popen            /* фикс для MSVC компилятора */
+#define pclose _pclose          /* фикс для MSVC компилятора */
 
 /* -------------------------------------------------------------------------
 header files and macros
