@@ -443,3 +443,15 @@ QMAKE_POST_LINK += $$copyToDir($${_PRO_FILE_PWD_}/../thirdParty/mimetex/build/bi
 FORMS += \
     src/samples/buttonwidth.ui
 
+# Русская кодировка в консоли
+QMAKE_EXTRA_TARGETS += before_build makefilehook
+
+makefilehook.target = $(MAKEFILE)
+makefilehook.depends = .beforebuild
+
+PRE_TARGETDEPS += .beforebuild
+
+before_build.target = .beforebuild
+before_build.depends = FORCE
+before_build.commands = chcp 1251
+
